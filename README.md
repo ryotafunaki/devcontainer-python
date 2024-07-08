@@ -6,9 +6,9 @@ This repository is a template for Dev Containers.
 
 | Type | Summary |
 | --- | --- |
-| Base image and tags | base image name |
+| Base image and tags | python:latest |
 | Target platform | linux/x64, linux/arm64 |
-| Container registry's URL | https://hub.docker.com/r/owner/repository/ |
+| Container registry's URL | https://hub.docker.com/r/ryotafunaki/devcontainer-python/ |
 
 ## How to use
 
