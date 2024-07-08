@@ -1,7 +1,7 @@
 // Copyright (c) 2024 RFull Development
 // This source code is managed under the MIT license. See LICENSE in the project root.
 {
-  "name": "Dev Container Template",
+  "name": "Python Dev Container",
   "image": "ryotafunaki/devcontainer-python:latest",
   "customizations": {
     "vscode": {
@@ -19,11 +19,14 @@
         "eamodio.gitlens",
         "ms-python.python",
         "ms-python.vscode-pylance",
+        "ms-python.autopep8",
+        "ms-python.flake8",
+        "ms-python.isort",
         "ms-toolsai.jupyter",
         "ms-toolsai.jupyter-keymap",
         "ms-toolsai.jupyter-renderers",
-        "ms-python.autopep8",
-        "ms-python.flake8"
+        "ms-toolsai.vscode-jupyter-slideshow",
+        "ms-toolsai.vscode-jupyter-cell-tags"
       ]
     }
   }
