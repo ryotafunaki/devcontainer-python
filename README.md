@@ -1,12 +1,12 @@
-# Dev Containers Template Repository
+# Python Dev Container Repository
 
-This repository is a template for Dev Containers.
+This repository is a Dev Container for Python.
 
 ## Overview
 
 | Type | Summary |
 | --- | --- |
-| Base image and tags | python:latest |
+| Base image and tags | python:3.12-bookworm |
 | Target platform | linux/x64, linux/arm64 |
 | Container registry's URL | https://hub.docker.com/r/ryotafunaki/devcontainer-python/ |
 
