@@ -12,8 +12,8 @@ RUN useradd -m ${USER_NAME} -s /bin/bash
 RUN echo "$USER_NAME ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USER_NAME}
 
 # Clean up
-RUN sudo apt clean && \
-    sudo rm -rf /var/lib/apt/lists/*
+RUN apt clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Switch to the non-root user
 USER ${USER_NAME}
