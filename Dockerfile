@@ -11,10 +11,6 @@ ARG USER_NAME=developer
 RUN useradd -m ${USER_NAME} -s /bin/bash
 RUN echo "$USER_NAME ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USER_NAME}
 
-# Clean up
-RUN apt clean && \
-    rm -rf /var/lib/apt/lists/*
-
 # Install development tools
 RUN pip install --upgrade pip
 
@@ -29,3 +25,7 @@ RUN cd ./shells && \
     ./install.sh && \
     cd ..
 RUN rm -rf ./shells
+
+# Clean up
+RUN sudo apt clean && \
+    sudo rm -rf /var/lib/apt/lists/*
