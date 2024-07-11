@@ -15,5 +15,18 @@ RUN echo "$USER_NAME ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USER_NAME}
 RUN apt clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Install development tools
+RUN pip install --upgrade pip
+
 # Switch to the non-root user
 USER ${USER_NAME}
+WORKDIR /home/${USER_NAME}
+
+# Install development tools
+COPY --chown=${USER_NAME}:${USER_NAME} ../shells/ ./shells/
+RUN cd ./shells && \
+    chmod +x *.sh && \
+    ./install_pyflow.sh && \
+    ./install_poetry.sh && \
+    cd ..
+RUN rm -rf ./shells
