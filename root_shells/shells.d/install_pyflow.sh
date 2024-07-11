@@ -12,6 +12,6 @@ fi
 
 PACKAGE_VERSION=0.3.1
 PACKAGE_FILE=pyflow_0.3.1_amd64.deb
-wget https://github.com/David-OConnor/pyflow/releases/download/$PACKAGE_VERSION/$PACKAGE_FILE
-sudo dpkg -i $PACKAGE_FILE
+wget https://github.com/David-OConnor/pyflow/releases/download/$PACKAGE_VERSION/$PACKAGE_FILE -O $PACKAGE_FILE
+dpkg -i $PACKAGE_FILE
 rm $PACKAGE_FILE
