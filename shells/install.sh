@@ -7,3 +7,7 @@ TARGET_FILES=$(find shells.d -type f -name "*.sh" | sort)
 for file in $TARGET_FILES; do
     bash "$file"
 done
+
+# Clean up
+sudo apt clean
+sudo rm -rf /var/lib/apt/lists/*
