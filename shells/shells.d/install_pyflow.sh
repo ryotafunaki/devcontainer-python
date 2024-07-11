@@ -1,11 +1,17 @@
 #!/bin/bash
-ARCH=$(dpkg --print-architecture)
+# Copyright (c) 2024 RFull Development
+# This source code is managed under the MIT license. See LICENSE in the project root.
 
+# Install pyflow
+# See https://pypi.org/project/pyflow/
+ARCH=$(dpkg --print-architecture)
 if [[ "$ARCH" != "amd64" ]]; then
     echo "pyflow is not available"
     exit 0
 fi
 
-wget https://github.com/David-OConnor/pyflow/releases/download/0.3.1/pyflow_0.3.1_amd64.deb
-sudo dpkg -i pyflow_0.3.1_amd64.deb
-rm pyflow_0.3.1_amd64.deb
+PACKAGE_VERSION=0.3.1
+PACKAGE_FILE=pyflow_0.3.1_amd64.deb
+wget https://github.com/David-OConnor/pyflow/releases/download/$PACKAGE_VERSION/$PACKAGE_FILE
+sudo dpkg -i $PACKAGE_FILE
+rm $PACKAGE_FILE
