@@ -10,11 +10,12 @@ if [[ "$ARCH" != "amd64" ]]; then
     exit 0
 fi
 
+PACKAGE_FILE=packages-microsoft-prod.deb
 source /etc/os-release
-wget https://packages.microsoft.com/config/$ID/$VERSION_ID/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-rm packages-microsoft-prod.deb
+wget https://packages.microsoft.com/config/$ID/$VERSION_ID/$PACKAGE_FILE -O $PACKAGE_FILE
+dpkg -i $PACKAGE_FILE
+rm $PACKAGE_FILE
 
 # Install the .NET SDK
-sudo apt update
-sudo apt install -y dotnet-sdk-8.0
+apt update
+apt install -y dotnet-sdk-8.0

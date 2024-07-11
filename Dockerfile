@@ -18,12 +18,20 @@ RUN apt clean && \
 # Install development tools
 RUN pip install --upgrade pip
 
+# Install development tools for root
+COPY --chown=${USER_NAME}:${USER_NAME} ./root_shells/ ./shells/
+RUN cd ./shells && \
+    chmod +x install.sh && \
+    ./install.sh && \
+    cd ..
+RUN rm -rf ./shells
+
 # Switch to the non-root user
 USER ${USER_NAME}
 WORKDIR /home/${USER_NAME}
 
-# Install development tools
-COPY --chown=${USER_NAME}:${USER_NAME} ./shells/ ./shells/
+# Install development tools for non-root
+COPY --chown=${USER_NAME}:${USER_NAME} ./user_shells/ ./shells/
 RUN cd ./shells && \
     chmod +x install.sh && \
     ./install.sh && \
