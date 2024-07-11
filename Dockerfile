@@ -25,8 +25,7 @@ WORKDIR /home/${USER_NAME}
 # Install development tools
 COPY --chown=${USER_NAME}:${USER_NAME} ./shells/ ./shells/
 RUN cd ./shells && \
-    chmod +x *.sh && \
-    ./install_pyflow.sh && \
-    ./install_poetry.sh && \
+    chmod +x install.sh && \
+    ./install.sh && \
     cd ..
 RUN rm -rf ./shells
