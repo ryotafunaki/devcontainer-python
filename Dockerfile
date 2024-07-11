@@ -15,11 +15,8 @@ RUN echo "$USER_NAME ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USER_NAME}
 RUN apt clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install development tools
-RUN pip install --upgrade pip
-
 # Install development tools for root
-COPY --chown=${USER_NAME}:${USER_NAME} ./root_shells/ ./shells/
+COPY ./root_shells/ ./shells/
 RUN cd ./shells && \
     chmod +x install.sh && \
     ./install.sh && \
