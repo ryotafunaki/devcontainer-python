@@ -1,8 +1,8 @@
 #!/bin/bash
 ARCH=$(dpkg --print-architecture)
 
-if [[ "$ARCH" == "arm64" ]]; then
-    echo "pyflow is not available for arm64"
+if [[ "$ARCH" != "amd64" ]]; then
+    echo "pyflow is not available"
     exit 0
 fi
 
