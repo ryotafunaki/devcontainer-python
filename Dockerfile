@@ -23,7 +23,7 @@ USER ${USER_NAME}
 WORKDIR /home/${USER_NAME}
 
 # Install development tools
-COPY --chown=${USER_NAME}:${USER_NAME} ../shells/ ./shells/
+COPY --chown=${USER_NAME}:${USER_NAME} ./shells/ ./shells/
 RUN cd ./shells && \
     chmod +x *.sh && \
     ./install_pyflow.sh && \
