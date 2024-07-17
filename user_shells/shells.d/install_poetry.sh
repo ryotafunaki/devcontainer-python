@@ -5,3 +5,4 @@
 # Install Poetry
 # See https://python-poetry.org/docs/#installation
 curl -sSL https://install.python-poetry.org | python3 -
+exit 0

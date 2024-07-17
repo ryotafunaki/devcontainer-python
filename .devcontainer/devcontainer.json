@@ -2,7 +2,10 @@
 // This source code is managed under the MIT license. See LICENSE in the project root.
 {
   "name": "Python Dev Container",
-  "image": "ryotafunaki/devcontainer-python:latest",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": ".."
+  },
   "customizations": {
     "vscode": {
       "extensions": [
